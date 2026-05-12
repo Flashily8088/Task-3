@@ -26,6 +26,42 @@ namespace SolverTests
 			Assert::AreEqual(q.get_val(1), list[1]);
 			Assert::AreEqual(q.get_val(2), list[2]);
 		}
+		TEST_METHOD(Creat_using_other_queue)
+	{
+		//Arrage
+		const int s = 3;
+		const int* list = new int[s] {1, 2, 3};
+
+		//Act
+		queue q1(s, list);
+		queue q(q1);
+
+		//Assert
+		Assert::AreEqual(q.get_size(), s);
+		Assert::AreEqual(q.get_front(), 0);
+		Assert::AreEqual(q.get_back(), s - 1);
+		Assert::AreEqual(q.get_val(0), list[0]);
+		Assert::AreEqual(q.get_val(1), list[1]);
+		Assert::AreEqual(q.get_val(2), list[2]);
+	}
+	TEST_METHOD(Creat_using_move_operator)
+	{
+		//Arrage
+		const int s = 3;
+		const int* list = new int[s] {1, 2, 3};
+
+		//Act
+		queue q1(s, list);
+		queue q = std::move(q1);
+
+		//Assert
+		Assert::AreEqual(q.get_size(), s);
+		Assert::AreEqual(q.get_front(), 0);
+		Assert::AreEqual(q.get_back(), s - 1);
+		Assert::AreEqual(q.get_val(0), list[0]);
+		Assert::AreEqual(q.get_val(1), list[1]);
+		Assert::AreEqual(q.get_val(2), list[2]);
+	}
 		TEST_METHOD(Insert_value)
 		{
 			//Arrage
