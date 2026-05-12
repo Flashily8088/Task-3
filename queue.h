@@ -84,7 +84,19 @@ public:
 	* @return false, если в очереди есть хотя бы один элемент
 	 */
 	bool empty() const;
-	int get_size();
-	int get_front();
-	int get_back();
+	/**
+	* @breaf считывает размер массива
+	* @return размер массива
+	 */
+	int get_size() const;
+	/**
+	* @breaf считывает первый элемент
+	* @return первый элемент
+	 */
+	int get_front() const;
+	/**
+	* @breaf считывает последний элемент
+	* @return последний элемент
+	 */
+	int get_back() const;
 };
