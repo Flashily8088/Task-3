@@ -19,7 +19,7 @@ int main() {
 	if (s <= 0) return 0;
 	int* list = new int[s];
 	for (size_t i(0); i < s; i++) {
-		int val;
+		int val = 0;
 		cin >> list[i];
 	}
 	queue Queue(s, list);
