@@ -51,14 +51,16 @@ queue::queue(queue&& other) :
 }
 queue& queue::operator=(const queue& other)
 {
-    delete[] array;
+    if(*this != other) {
+        delete[] array;
     size = other.size;
     back = other.back;
     array = new int[size];
     for (size_t i(0); i < size; i++) {
-        array[i] = other.array[i];
+    array[i] = other.array[i];
+        }
+        return *this;
     }
-    return *this;
 }
 
 void queue::insert(const int val, const int index)
