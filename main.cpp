@@ -16,7 +16,7 @@ int main() {
 	int s = 0;
 	cout << "Size: ";
 	cin >> s;
-	if (s <= 0) 
+	if (s <= 0) return 0;
 	int* list = new int[s];
 	for (size_t i(0); i < s; i++) {
 		int val;
