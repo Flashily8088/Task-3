@@ -14,10 +14,9 @@ using namespace std;
 */
 int main() {
 	int s = 0;
-	do {
 	cout << "Size: ";
 	cin >> s;
-	} while (s < 0);
+	if (s <= 0) 
 	int* list = new int[s];
 	for (size_t i(0); i < s; i++) {
 		int val;
