@@ -33,8 +33,11 @@ queue::queue(const queue& other){
         array[i] = other.array[i];
     }
 }
-queue& queue::operator=(queue& other)
+queue::queue(queue&& other){
+}
+queue& queue::operator=(const queue& other)
 {
+    delete[] array;
     size = other.size;
     back = other.back;
     array = new int[size];
