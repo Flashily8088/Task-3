@@ -25,15 +25,25 @@ queue::queue(const int s, const int* list) : size(s), front(0), back(s - 1) {
         array[i] = val;
     }
 }
-queue::queue(const queue& other){
+queue::queue(const queue& other) {
     size = other.size;
     front = other.front;
     back = other.back;
+    array = new int[size];
     for (size_t i(0); i < size; i++) {
-        array[i] = other.array[i];
+        array[i] = other.get_val(i);
     }
 }
-queue::queue(queue&& other){
+queue::queue(queue&& other) :
+    array(other.array),
+    size(other.size),
+    front(other.front),
+    back(other.back)
+{
+    other.array = nullptr;
+    other.size = 0;
+    other.front = 0;
+    other.back = -1;
 }
 queue& queue::operator=(const queue& other)
 {
