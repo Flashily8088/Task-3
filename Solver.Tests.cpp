@@ -37,6 +37,7 @@ namespace SolverTests
 			q.insert(0, 0);
 
 			//Assert
+			Assert::AreEqual(q.get_size(), 4);
 			Assert::AreEqual(q.get_val(0), 0);
 			Assert::AreEqual(q.get_val(1), 1);
 			Assert::AreEqual(q.get_val(2), 2);
@@ -53,6 +54,7 @@ namespace SolverTests
 			q.remove(2);
 
 			//Assert
+			Assert::AreEqual(q.get_size(), 2);
 			Assert::AreEqual(q.get_val(0), 1);
 			Assert::AreEqual(q.get_val(1), 3);
 		}
@@ -67,6 +69,7 @@ namespace SolverTests
 			q.insert_back(4);
 
 			//Assert
+			Assert::AreEqual(q.get_size(), 4);
 			Assert::AreEqual(q.get_val(0), 1);
 			Assert::AreEqual(q.get_val(1), 2);
 			Assert::AreEqual(q.get_val(2), 3);
@@ -93,7 +96,7 @@ namespace SolverTests
 			//Act
 			bool result = q.empty();
 			//Assert
-			Assert::IsTrue;
+			Assert::IsTrue(result);
 		}
 	};
 }
