@@ -34,6 +34,16 @@ public:
 	 */
 	queue(const int s, const int* list);
 	/**
+	* @breaf конструктор копирования
+	* @param other - очередь коприования 
+	 */
+	queue(const queue& other);
+	/**
+	* @breaf конструктор перемещения
+	* @param other - очередь перемещения
+	 */
+	queue(queue&& other);
+	/**
 	* @breaf оператор вывода
 	* @param os - поток вывода
 	* @param Queue - очередь
