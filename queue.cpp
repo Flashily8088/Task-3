@@ -119,8 +119,7 @@ size_t queue::search(const int val) const
     return -1;
 }
 bool queue::empty() const{
-    if (size == 0) return true;
-    else return false;
+    return size == 0;
 }
 ostream& operator <<(ostream& os, const queue Queue) {
     cout << "[";
