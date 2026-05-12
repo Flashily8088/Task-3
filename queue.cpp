@@ -16,6 +16,10 @@ int queue::get_back() const
 {
     return back;
 }
+int queue::get_val(const int index) const
+{
+    return array[index];
+}
 
 queue::queue() : size(0), front(0), back(-1), array(nullptr) {}
 queue::queue(const int s, const int* list) : size(s), front(0), back(s - 1) {
@@ -109,12 +113,6 @@ void queue::insert_back(const int val)
     size++;
     back = size - 1;
 }
-
-int queue::get_val(const int index) const
-{
-    return array[index];
-}
-
 void queue::read_head() const
 {
     cout << array[front];
