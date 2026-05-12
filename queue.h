@@ -55,7 +55,7 @@ public:
 	* @breaf оператор =
 	* @param Queue - очередь
 	 */
-	queue& operator =(queue& Queue);
+	queue& operator =(const queue& Queue);
 	/**
 	* @breaf вставляет элемент по индексу
 	* @param val - значение элемента
