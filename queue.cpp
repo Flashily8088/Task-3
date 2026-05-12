@@ -59,8 +59,8 @@ queue& queue::operator=(const queue& other)
     for (size_t i(0); i < size; i++) {
     array[i] = other.array[i];
         }
-        return *this;
     }
+        return *this;
 }
 
 void queue::insert(const int val, const int index)
