@@ -2,17 +2,17 @@
 #include<iostream>
 using namespace std;
 
-int queue::get_size()
+int queue::get_size() const
 {
     return size;
 }
 
-int queue::get_front()
+int queue::get_front() const
 {
     return front;
 }
 
-int queue::get_back()
+int queue::get_back() const
 {
     return back;
 }
@@ -25,7 +25,14 @@ queue::queue(const int s, const int* list) : size(s), front(0), back(s - 1) {
         array[i] = val;
     }
 }
-
+queue::queue(const queue& other){
+    size = other.size;
+    front = other.front;
+    back = other.back;
+    for (size_t i(0); i < size; i++) {
+        array[i] = other.array[i];
+    }
+}
 queue& queue::operator=(queue& other)
 {
     size = other.size;
