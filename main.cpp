@@ -13,18 +13,19 @@ using namespace std;
 *  * return 0
 */
 int main() {
-	int s;
+	int s = 0;
+	do {
 	cout << "Size: ";
 	cin >> s;
+	} while (s < 0);
 	int* list = new int[s];
-	for (int i(0); i < s; i++) {
+	for (size_t i(0); i < s; i++) {
 		int val;
-		cin >> val;
-		list[i] = val;
+		cin >> list[i];
 	}
 	queue Queue(s, list);
 	cout << Queue;
-	int index, v;
+	int index = 0, v = 0;
 	cout << "Insert: ";
 	cin >> v;
 	cout << "Index: ";
@@ -45,4 +46,5 @@ int main() {
 	cin >> v;
 	Queue.remove(v);
 	cout << Queue;
+	return 0;
 }
