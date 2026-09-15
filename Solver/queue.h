@@ -39,13 +39,14 @@ public:
 	* @param Queue - очередь
 	* @return поток вывода
 	 */
-
+	queue(const queue& other);
+	queue(queue&& other);
 	friend ostream& operator <<(ostream& os, const queue Queue);
 	/**
 	* @breaf оператор =
 	* @param Queue - очередь
 	 */
-	queue& operator =(queue& Queue);
+	queue& operator =(const queue& Queue);
 	/**
 	* @breaf вставляет элемент по индексу
 	* @param val - значение элемента

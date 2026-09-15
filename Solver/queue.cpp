@@ -16,7 +16,10 @@ int queue::get_back()
 {
     return back;
 }
-
+int queue::get_val(const int index) const
+{
+    return array[index];
+}
 queue::queue() : size(0), front(0), back(-1), array(nullptr) {}
 queue::queue(const int s, const int* list) : size(s), front(0), back(s - 1) {
     array = new int[size];
@@ -25,9 +28,29 @@ queue::queue(const int s, const int* list) : size(s), front(0), back(s - 1) {
         array[i] = val;
     }
 }
-
-queue& queue::operator=(queue& other)
+queue::queue(const queue& other) {
+    size = other.size;
+    front = other.front;
+    back = other.back;
+    array = new int[size];
+    for (size_t i(0); i < size; i++) {
+        array[i] = other.get_val(i);
+    }
+}
+queue::queue(queue&& other) :
+    array(other.array),
+    size(other.size),
+    front(other.front),
+    back(other.back)
 {
+    other.array = nullptr;
+    other.size = 0;
+    other.front = 0;
+    other.back = -1;
+}
+queue& queue::operator=(const queue& other)
+{
+    delete[] array;
     size = other.size;
     back = other.back;
     array = new int[size];
@@ -88,11 +111,6 @@ void queue::insert_back(const int val)
     delete[]new_array;
     size++;
     back = size - 1;
-}
-
-int queue::get_val(const int index) const
-{
-    return array[index];
 }
 
 void queue::read_head() const
