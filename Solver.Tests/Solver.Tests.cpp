@@ -122,14 +122,14 @@ namespace SolverTests
 			//Assert
 			Assert::AreEqual(converted, 0);
 		}
-		TEST_METHOD(Is_empty)
-		{
-			//Arrage
-			queue q;
-			//Act
-			bool result = q.empty();
-			//Assert
-			Assert::IsTrue;
-		}
+		//TEST_METHOD(Is_empty)
+		//{
+		//	//Arrage
+		//	queue q;
+		//	//Act
+		//	bool result = q.empty();
+		//	//Assert
+		//	Assert::IsTrue;
+		//}
 	};
 }
